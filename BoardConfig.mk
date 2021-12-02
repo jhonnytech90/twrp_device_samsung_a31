@@ -74,7 +74,7 @@ PLATFORM_VERSION := 16.1.0
 # System as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-AB_OTA_UPDATER := false
+AB_OTA_UPDATER := true
 
 # TWRP Configuration
 
