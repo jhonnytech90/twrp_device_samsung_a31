@@ -31,6 +31,11 @@ TARGET_OTA_ASSERT_DEVICE := a31
 # Bootloader"
 TARGET_BOOTLOADER_BOARD_NAME := SRPTA24B001
 
+# System as root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+AB_OTA_UPDATER := false
+
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432 # This is the maximum known partition size, but it can be higher, so we just omit it
@@ -77,3 +82,39 @@ TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+RECOVERY_VARIANT := twrp
+RECOVERY_SDCARD_ON_DATA := true
+# Do not set up legacy properties
+TW_NO_LEGACY_PROPS := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 96
+TW_Y_OFFSET := 80
+TW_H_OFFSET := -80
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
+TW_EXCLUDE_TWRPAPP := true
+TW_USE_NEW_MINADBD := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP := true
+
+#SHRP_Variables
+SHRP_PATH := device/samsung/a31
+SHRP_MAINTAINER := jhonatanmikael
+SHRP_DEVICE_CODE := a31
+SHRP_EDL_MODE := 1
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usbotg
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_REC_TYPE := SAR
+SHRP_DEVICE_TYPE := A/B
+SHRP_FLASH := 1
+SHRP_EXPRESS := true
+SHRP_DEV_USE_HEX := true
+SHRP_OFFICIAL := true
+SHRP_DARK := true
+SHRP_NO_SAR_AUTOMOUNT := true
+SHRP_AB := true
